@@ -22,3 +22,71 @@ public class ReadJSON {
         System.out.println("Lastname: " + lname);
     }
 }
+
+
+
+Configuration of Jenkins
+1. Create new project and provide name for the project. Choose “Freestyle Project”.
+VVCE, MYSORE12 [20CS77-DEVOPS LAB]
+2. Click on newly created project and move to configuration. Under source Code
+Management provide git repository.
+3. Provide branch name where project is located.
+VVCE, MYSORE Under Build Triggers select Poll SCM and configure the schedule according to your
+project.
+5. In build steps choose “Execute Windows batch command” and provide command for
+execution.
+6. Apply and save your configuration.
+7. Click on “Build Now” for detailed output click on “Console Output” and verify the
+process. Finally build status will be displayed according to your project implementation.
+
+
+
+
+C1. Create a maven projects with all dependencies required for the application in CI/CD
+pipeline.
+Required tools:
+1. Eclipse IDE
+2. Maven repository
+3. JSON
+Reading data from JSON file.
+Create JSON file
+Save the data.
+1. Create maven project
+New Project -> Others -> select maven project
+Provide project name
+2. Create folder “JSON” and add .json file to it.
+VVCE, MYSORE26 [20CS77-DEVOPS LAB]
+3. Adding JSON dependency to the project in POM.xml file.
+Procedure to add dependency
+Step1 : Go to maven repository
+Stept2 : search simple json
+Step3 : choose relevant based on highest usages.
+Setp4: choose version
+Stept5: copy the dependency.[20CS77-DEVOPS LAB]
+Step6: Open POM.xml and add dependency.
+VVCE, MYSORE28 [20CS77-DEVOPS LAB]
+Program to read data from JSON. Create a class under src/test/java
+Run the program it will fetch data from JSON file
+
+
+C2. Integrate communication channel with Jenkins for status of project and also enable email
+notification for a build.
+Communication Channel : Slack
+Slack installation :
+1. 2. Install slack application. Create account in slack.
+Create new workgroup or use existing workgroup, add new channel under group.
+VVCE, MYSORE30 [20CS77-DEVOPS LAB]
+Jenkins configuration:
+1. Add slack notifications plug-in in jenkins.
+2. Click on installed plug-in
+It will redirect to notifications page
+[20CS77-DEVOPS LAB]
+3. click on “Configure the Jenkins integration:” choose posting channel
+4. after choosing channel it will redirec to next page and note down “Integration Token
+Credential ID”
+5. Create free style project.
+6. Confiugation of project:
+7. Add post build action and choose notifications.
+8. Save the configuration and run the build.
+9. Notification will be triggered from jenkins. User will get the notification in channel.
+
